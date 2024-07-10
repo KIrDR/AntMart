@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker AntMart</title>
+    <style> 
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main { 
+            background-color: red;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 { 
+            text-align: center;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+        .circle:hover {
+            cursor: pointer;
+        }
+
+        h2{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main> 
+        <h1>Clicker AntMart</h1>
+        <div class="circle" id="clickable"></div>
+        <div>
+            <h2 id="count">Clicks: 0</h2>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const circle = document.getElementById('clickable');
+            const countDisplay = document.getElementById('count');
+            let count = 0;
+
+            circle.addEventListener('click', () => {
+                count++;
+                countDisplay.textContent = `Clicks: ${count}`;
+            });
+        });
+    </script>
+</body>
+</html>
